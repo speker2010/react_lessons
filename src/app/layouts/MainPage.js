@@ -5,7 +5,14 @@ import Sidebar from '../components/Sidebar';
 
 export default class MainPage extends React.Component
 {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            counter: 0
+        }
+    }
     render() {
+        const test = React.createElement('h1', {}, 'My First React Code');
         return <div>
             <Header/>
             <div className="container">

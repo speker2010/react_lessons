@@ -5,6 +5,8 @@ export default class Menu extends React.Component
 {
     render(){
         //jsx
-        return <MenuList items={this.props.items}/>;
+        return <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <MenuList items={this.props.items}/>
+        </div>;
     }
 }

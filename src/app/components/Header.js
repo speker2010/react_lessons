@@ -1,36 +1,37 @@
 import React from 'react';
 import Menu from './Menu';
-import Login from './Login';
-import LoginModal from './LoginModal';
+import MenuTogler from './MenuTogler';
+import Logo from './Logo';
+
 
 export default class Header extends React.Component
 {
     render(){
         let items = [
             {
-                text: 'Ссылка 1',
+                text: 'Home',
                 link: '#'
             },
             {
-                text: 'Ссылка 2',
+                text: 'About',
                 link: '#'
             },
             {
-                text: 'Ссылка 3',
+                text: 'Services',
+                link: '#'
+            },
+            {
+                text: 'Contacts',
                 link: '#'
             }
         ];
         //jsx
-        return <header>
-            <nav className="navbar navbar-default" role="navigation">
+        return <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div className="container">
+                    <Logo brand={'navbar-brand'} />
+                    <MenuTogler />
                     <Menu items={items}/>
-                    <div className="navbar-text navbar-right">
-                        <Login/>
-                    </div>
                 </div>
-            </nav>
-            <LoginModal/>
-        </header>;
+            </nav>;
     }
 }

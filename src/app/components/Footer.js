@@ -5,27 +5,10 @@ import Dev from './Dev';
 export default class Footer extends React.Component
 {
     render() {
-        let items = [
-            {
-                text: 'Ссылка 1',
-                link: '#'
-            },
-            {
-                text: 'Ссылка 2',
-                link: '#'
-            },
-            {
-                text: 'Ссылка 3',
-                link: '#'
-            },
-        ];
-        return <footer>
+        return <footer className="main-footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12">
-                        <Menu items={items}/>
-                    </div>
-                    <div className="col-md-12">
+                    <div className="col-md-12 text-center main-footer__copy">
                         <Dev/>
                     </div>
                 </div>

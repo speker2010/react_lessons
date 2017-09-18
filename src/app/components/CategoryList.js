@@ -11,7 +11,7 @@ export default class CategoryList extends React.Component
                 key={index}
             />;
         });
-        return <ul>
+        return <ul className="category-list">
             {categoryListItem}
         </ul>;
     }

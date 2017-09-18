@@ -1,29 +1,43 @@
 import React from 'react';
 import Panel from './Panel';
 import CategoryList from './CategoryList';
+import Search from './Search';
 
 export default class Sidebar extends React.Component
 {
     render() {
         let categoryItems = [
             {
-                text: 'Категория 1',
+                text: 'Web design',
                 link: '#'
             },
             {
-                text: 'Категория 2',
+                text: 'Html',
                 link: '#'
             },
             {
-                text: 'Категория 3',
+                text: 'Css',
+                link: '#'
+            },
+            {
+                text: 'JavaScript',
+                link: '#'
+            },
+            {
+                text: 'Php',
+                link: '#'
+            },
+            {
+                text: 'Apache',
                 link: '#'
             }
         ];
         let categoryList = <CategoryList items={categoryItems}/>;
+        let search = <Search/>
         return <div>
-            <Panel header="Панель" body="Содержимое панели"/>
-            <Panel header="Панель" body={categoryList}/>
-            <Panel header="Панель" body="Содержимое панели"/>
+            <Panel header="Search" body={search}/>
+            <Panel header="Categories" body={categoryList}/>
+            <Panel header="Site widget" body="You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!"/>
         </div>;
     }
 }

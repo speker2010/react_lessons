@@ -12,6 +12,6 @@ export default class MenuList extends React.Component
            />
         });
         //jsx
-        return <ul className="nav navbar-nav">{menuItems}</ul>;
+        return <ul className="nav navbar-nav navbar-right">{menuItems}</ul>;
     }
 }

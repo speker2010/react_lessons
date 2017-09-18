@@ -3,7 +3,7 @@ import React from 'react';
 export default class LoginModal extends React.Component
 {
     render() {
-        return <div className="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        return <div className="modal fade bs-example-modal-sm" tabIndex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div className="modal-dialog modal-sm">
                 <div className="modal-content">
                     <div className="modal-header">Войти</div>

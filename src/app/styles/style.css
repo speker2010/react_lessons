@@ -1,0 +1,39 @@
+body {
+  padding-top: 70px; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 20px; }
+
+h5 {
+  font-weight: 700; }
+
+p {
+  font-size: 16px; }
+
+.excerpt {
+  font-size: 20px;
+  font-weight: 300; }
+
+.main-footer {
+  background: #343a40;
+  padding: 48px 0; }
+  .main-footer__copy {
+    color: #fff; }
+
+.category-list {
+  padding: 0;
+  margin: 0; }
+  .category-list__item {
+    display: inline-block;
+    width: 49%; }
+
+.post-detail {
+  padding-bottom: 30px; }
+
+.comments_visible_hidden .media {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */
