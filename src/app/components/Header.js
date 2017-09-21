@@ -3,26 +3,23 @@ import Menu from './Menu';
 import MenuTogler from './MenuTogler';
 import Logo from './Logo';
 
-
 export default class Header extends React.Component
 {
+
+
     render(){
         let items = [
             {
-                text: 'Home',
-                link: '#'
+                link: '/',
+                text: 'Home'
             },
             {
-                text: 'About',
-                link: '#'
+                link: '/blogs',
+                text: 'Blogs'
             },
             {
-                text: 'Services',
-                link: '#'
-            },
-            {
-                text: 'Contacts',
-                link: '#'
+                link: '/comments',
+                text: 'Comments'
             }
         ];
         //jsx
