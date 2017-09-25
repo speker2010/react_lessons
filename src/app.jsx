@@ -8,6 +8,7 @@ import NotFound from './app/pages/NotFound';
 import Comments from './app/pages/Comments';
 import PostDetail from './app/components/PostDetail';
 import Post from './app/pages/Post';
+import BlogsFlux from './app/components/BlogsFlux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 /*
@@ -26,6 +27,7 @@ ReactDOM.render(
             <Route path="/blogs" component={Blogs}>
                 <Route path=":blogId" component={Blog}/>
             </Route>
+            <Route path="/blogs-flux" component={BlogsFlux}/>
             <Route path="/comments" component={Comments}/>
             <Route path="/posts/:postId" component={Post}/>
             <Route path="*" component={NotFound}/>
