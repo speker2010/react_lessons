@@ -1,26 +1,24 @@
 import React from 'react';
 import PostDetail from '../components/PostDetail';
-import axios from 'axios';
-
+import { connect } from 'react-redux';
+import { fetchPost } from '../actions/postActions';
+@connect((store)=>{
+    return {
+        is_fetching: store.post.is_fetching,
+        post: store.post.post
+    }
+})
 export default class Post extends React.Component
 {
     constructor()
     {
         super(...arguments);
-        this.state = {
-            post: null
-        };
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.params.postId}`)
-            .then((response)=>{
-                let { data } = response;
-                this.setState({
-                    post: data
-                });
-            });
+        this.props.dispatch(fetchPost(this.props.params.postId));
+        console.log(this.props.params.postId, 'postId');
     }
     render()
     {
-        if(!this.state.post) return <div>No posts</div>;
-        return <PostDetail post={this.state.post}/>;
+        if(this.props.is_fetching) return <div>Loading</div>;
+        return <PostDetail post={this.props.post}/>;
     }
 }

@@ -7,7 +7,7 @@ export default class PostDetail extends React.Component
     {
         return <div className="panel panel-default">
             <div className="panel-heading">
-                <div className="panle-title">{this.props.post.title}</div>
+                <div className="panel-title"><Link to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link></div>
             </div>
             <div className="panel-body">
                 <p>{this.props.post.body}</p>

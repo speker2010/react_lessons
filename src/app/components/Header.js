@@ -24,6 +24,10 @@ export default class Header extends React.Component
             {
                 link: '/blogs-flux',
                 text: 'Blogs flux'
+            },
+            {
+                link: '/posts',
+                text: 'Posts redux'
             }
         ];
         //jsx

@@ -6,10 +6,12 @@ import Blogs from './app/pages/Blogs';
 import Blog from './app/pages/Blog';
 import NotFound from './app/pages/NotFound';
 import Comments from './app/pages/Comments';
-import PostDetail from './app/components/PostDetail';
+import Posts from './app/pages/Posts';
 import Post from './app/pages/Post';
 import BlogsFlux from './app/components/BlogsFlux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import store from './app/stores/store';
 
 /*
 На сайте с json нет привязки к комментариям по userId, поэтому последние два задания не далал. Причем одно из них уже
@@ -21,16 +23,19 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 const app = document.getElementById('app');
 
 ReactDOM.render(
-    <Router history={browserHistory}>
-        <Route path="/" component={Main}>
-            <IndexRoute component={Index}/>
-            <Route path="/blogs" component={Blogs}>
-                <Route path=":blogId" component={Blog}/>
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={Main}>
+                <IndexRoute component={Index}/>
+                <Route path="/posts" component={Posts}/>
+                <Route path="/posts/:postId" component={Post}/>/*Не знаю почему но когда вкладывал внуть Route path='/posts/', то не срабатывало*/
+                <Route path="/blogs" component={Blogs}>
+                    <Route path=":blogId" component={Blog}/>
+                </Route>
+                <Route path="/blogs-flux" component={BlogsFlux}/>
+                <Route path="/comments" component={Comments}/>
+                <Route path="*" component={NotFound}/>
             </Route>
-            <Route path="/blogs-flux" component={BlogsFlux}/>
-            <Route path="/comments" component={Comments}/>
-            <Route path="/posts/:postId" component={Post}/>
-            <Route path="*" component={NotFound}/>
-        </Route>
-    </Router>,
-app);
+        </Router>
+    </Provider>,
+    app);
